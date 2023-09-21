@@ -1,4 +1,5 @@
 from PIL import Image, ImageDraw, ImageFont
+import textwrap
 
 COLORS = {
     "blue": (66, 176, 245),
@@ -16,15 +17,27 @@ ROW_OFFSET = 90
 
 
 def draw_rectangle( position: tuple, type: str, lines: int ):
-    color = {"t": "blue", "l": "yellow", "c": "white"}[type]
-    draw.rectangle( (position[0] + 4, position[1], position[0] + COLUMN_WIDTH - 4, position[1] + ROW_HEIGHT * lines - 4),
-                    fill=COLORS[ color ], width=2, outline=COLORS["black"] )
+    color = {"t": "blue", "l": "yellow", "c": "white", "g": "cyan"}[type]
+    x1, y1, x2, y2 = (position[0] + 4, position[1], position[0] + COLUMN_WIDTH - 4, position[1] + ROW_HEIGHT * lines - 4)
+    draw.rectangle( (x1, y1, x2, y2), fill=COLORS[ color ], width=2, outline=COLORS["black"] )
+    return x2 - x1, y2 - y1
 
+def draw_name( position: tuple, text: str, rec_size: tuple ):
 
-def draw_name( position: tuple, text: str ):
-    w, h = draw.textsize( text, font=names_font )
-    position = (position[0] - w / 2, position[1] - h / 2)
-    draw.text( position, text, font=names_font, fill=(0, 0, 0))
+    # Calculate the available width for the text
+    available_width = COLUMN_WIDTH + 150  # A margin of 20 pixels on each side
+
+    # Wrap the text to fit the available width
+    wrapped_text = textwrap.fill(text, width=int(available_width / 25))
+
+    wrapped_text_width, wrapped_text_height = draw.multiline_textsize(wrapped_text, font=names_font)
+
+    # Calculate the position to center the wrapped text on the image
+    x = (rec_size[0] - wrapped_text_width) // 2
+    y = (rec_size[1] - wrapped_text_height) // 2
+
+    # Draw the centered wrapped text on the image
+    draw.multiline_text((x + position[0], y + position[1]), wrapped_text, fill=(0, 0, 0), font=names_font, align='center')
 
 
 def draw_hour( position: tuple, hours: int, minutes: int ):
@@ -39,29 +52,20 @@ def draw_hour( position: tuple, hours: int, minutes: int ):
 
 
 DATA = (
-    ("Sebastian", 15, 00, "Monday", 90, "t"),
-    ("Julek", 17, 00, "Monday", 60, "t"),
-    ("Alisa", 18, 30, "Tuesday", 60, "t"),
-    ("Wojtek", 19, 30, "Tuesday", 60, "t"),
-    ("Julek", 17, 00, "Wednesday", 60, "t"),
-    ("Julek", 15, 00, "Thursday", 60, "t"),
-    ("Hania", 18, 15, "Thursday", 60, "t"),
-    ("Mania", 12, 00, "Saturday", 60, "t"),
-    # ("Sebastian", 13, 00, "Saturday", 60, "t"),
+    ("Angielski (?)", 10, 00, "Monday", 90, "c"),
+    ("Programowanie funkcyjne (0053)", 8, 15, "Monday", 90, "c"),
+    ("Programowanie w C# i .NET (0056)", 12, 00, "Monday", 90, "c"),
+    ("Angielski (?)", 10, 00, "Wednesday", 90, "c"),
+    ("Android (0020)", 10, 00, "Thursday", 90, "c"),
+    ("Projekt zespołowy (0016)", 13, 00, "Thursday", 45, "c"),
+    ("Wzorce projektowe (0056)", 8, 00, "Friday", 90, "c"),
 
-    ("SK (1073)", 17, 45, "Monday", 90, "c"),
-    ("MN (0016)", 16, 00, "Tuesday", 90, "c"),
-    ("Angielski (1103)", 10, 15, "Wednesday", 90, "c"),
-    ("JFA (0073)", 12, 15, "Wednesday", 90, "c"),
-    ("IO (0056)", 10, 30, "Thursday", 135, "c"),
-    ("RPS (0083)", 8, 30, "Friday", 90, "c"),
-    ("Angielski (0074)", 10, 15, "Friday", 90, "c"),
+    ("Android (0009)", 8, 15, "Tuesday", 90, "l"),
+    ("Programowanie funkcyjne (1177)", 8, 15, "Wednesday", 90, "l"),
+    ("Programowanie w C# i .NET (1093)", 12, 15, "Wednesday", 90, "l"),
+    ("Wzorce projektowe (1177)", 8, 15, "Thursday", 90, "l"),
 
-    ("SK (0089)", 12, 00, "Monday", 90, "l"),
-    ("MN (0004)", 8, 30, "Tuesday", 90, "l"),
-    ("RPS (0089)", 14, 15, "Thursday", 90, "l"),
-    ("IO (0089)", 13, 00, "Friday", 90, "l"),
-    ("JFA (0089)", 14, 45, "Friday", 90, "l")
+
 )
 
 DAYS = ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
@@ -110,8 +114,8 @@ for record in DATA:
     y = ROW_OFFSET + ( record[ 1 ] - 8 ) * ROW_HEIGHT * 4 + record[ 2 ] // 15 * ROW_HEIGHT
     lines = record[ 4 ] // 15
 
-    draw_rectangle( (x, y), record[ 5 ], lines )
-    draw_name( (x + COLUMN_WIDTH // 2, int(y + ROW_HEIGHT * lines / 2)), record[ 0 ] )
+    rec_size = draw_rectangle( (x, y), record[ 5 ], lines )
+    draw_name( (x, y), record[ 0 ], rec_size )
     draw_hour( (x + 10, y + 5), record[ 1 ], record[ 2 ] )
 
 
