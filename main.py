@@ -5,7 +5,7 @@ COLORS = {
     "blue": (66, 176, 245),
     "black": (0, 0, 0),
     "gray": (228, 230, 228),
-    "cyan": (84, 245, 232),
+    "cyan": (0, 213, 255),
     "yellow": (252, 254, 220),
     "white": (252, 254, 252),
     "green": (66, 245, 155),
@@ -64,7 +64,7 @@ def draw_hour(position: tuple, hours: int, minutes: int):
 
 
 DATA = (
-    ("Angielski (0074)", 10, 00, "Monday", 90, "c"),
+    ("Angielski (0074)", 9, 45, "Monday", 90, "c"),
     ("Programowanie funkcyjne (0053)", 8, 15, "Monday", 90, "c"),
     ("Programowanie w C# i .NET (0056)", 12, 00, "Monday", 90, "c"),
     ("Angielski (0074)", 10, 00, "Wednesday", 90, "c"),
@@ -79,14 +79,16 @@ DATA = (
 
     ("Alisa", 18, 30, "Monday", 60, "to"),
     ("Hania", 17, 00, "Tuesday", 60, "to"),
+    ("Lena", 19, 00, "Wednesday", 60, "to"),
     ("Mania", 16, 00, "Friday", 60, "to"),
 
     ("Mateusz", 12, 00, "Saturday", 90, "ts"),
     ("Paweł", 13, 30, "Saturday", 90, "ts"),
 
-    ("Sofia", 19, 00, "Tuesday", 60, "tv"),
-    ("Martyna", 12, 00, "Friday", 60, "tv"),
-    # ("Marysia", 12, 00, "Friday", 60, "tv"),
+    ("Sofia", 18, 00, "Wednesday", 60, "tv"),
+    ("Martyna", 17, 00, "Thursday", 60, "tv"),
+    ("Marysia", 18, 00, "Tuesday", 60, "tv"),
+    ("Marysia", 17, 00, "Friday", 60, "tv"),
 
 )
 
