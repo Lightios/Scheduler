@@ -1,6 +1,5 @@
 from constants import *
 
-
 DAYS = DAYS_PL
 
 HOUR_START = 10

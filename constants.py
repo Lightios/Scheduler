@@ -1,5 +1,4 @@
-from PIL import Image, ImageDraw, ImageFont
-import textwrap
+from PIL import ImageFont
 from datetime import datetime, timedelta
 
 THEME = "dark"
@@ -30,8 +29,6 @@ TYPES = {
 }
 
 TEXT_COLOR = COLORS["black"] if THEME == "light" else COLORS["white"]
-
-
 
 COLUMN_WIDTH = 250
 COLUMN_OFFSET = 125

@@ -1,8 +1,6 @@
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw
 import textwrap
-from datetime import datetime, timedelta
 
-from constants import *
 from paramters import *
 from data import DATA
 
@@ -20,19 +18,15 @@ def draw_rectangle(position: tuple, type: str, lines: int):
     return x2 - x1, y2 - y1
 
 def draw_name(position: tuple, text: str, rec_size: tuple):
-    # Calculate the available width for the text
-    available_width = COLUMN_WIDTH + 150  # A margin of 20 pixels on each side
+    available_width = COLUMN_WIDTH + 150
 
-    # Wrap the text to fit the available width
     wrapped_text = textwrap.fill(text, width=int(available_width / 25))
 
     wrapped_text_width, wrapped_text_height = textsize(wrapped_text, font=names_font)
 
-    # Calculate the position to center the wrapped text on the image
     x = (rec_size[0] - wrapped_text_width) // 2
     y = (rec_size[1] - wrapped_text_height) // 2
 
-    # Draw the centered wrapped text on the image
     draw.multiline_text((x + position[0], y + position[1]), wrapped_text, fill=TEXT_COLOR, font=names_font,
                         align='center')
 
