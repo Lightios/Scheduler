@@ -14,5 +14,5 @@ def send():
         'media': open('result.png', 'rb')
     }
 
-    result_tutoring = requests.post(url_tutoring, files=files_tutoring)
+    # result_tutoring = requests.post(url_tutoring, files=files_tutoring)
     result_eastside = requests.post(url_eastside, files=files_eastside)

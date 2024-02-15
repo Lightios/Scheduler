@@ -1,6 +1,6 @@
 if __name__ == "__main__":
-    import scheduler
+    import main
     import discord_sender
 
-    scheduler.generate()
+    main.generate()
     discord_sender.send()
