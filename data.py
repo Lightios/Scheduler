@@ -1,14 +1,14 @@
 DATA = (
-    ("Psychologia (1177)", 10, 15, 3, 90, "l"),
-    ("Cognitive systems (1146)", 14, 15, 3, 90, "l"),
-    ("Programowanie dla WWW (0089)", 12, 00, 4, 90, "l"),
-    ("Podstawy AI (1177)", 12, 15, 5, 90, "l"),
-
-    ("Podstawy AI (0020)", 14, 00, 5, 90, "c"),
-    ("Wstęp do kognitywistyki (0056)", 10, 15, 2, 90, "c"),
-    ("Cognitive systems (1146)", 16, 00, 3, 90, "c"),
-    ("Psychologia (1086)", 18, 15, 4, 90, "c"),
-    ("Programowanie dla WWW (0089)", 11, 45, 1, 90, "c"),
+    # ("Psychologia (1177)", 10, 15, 3, 90, "l"),
+    # ("Cognitive systems (1146)", 14, 15, 3, 90, "l"),
+    # ("Programowanie dla WWW (0089)", 12, 00, 4, 90, "l"),
+    # ("Podstawy AI (1177)", 12, 15, 5, 90, "l"),
+    #
+    # ("Podstawy AI (0020)", 14, 00, 5, 90, "c"),
+    # ("Wstęp do kognitywistyki (0056)", 10, 15, 2, 90, "c"),
+    # ("Cognitive systems (1146)", 16, 00, 3, 90, "c"),
+    # ("Psychologia (1086)", 18, 15, 4, 90, "c"),
+    # ("Programowanie dla WWW (0089)", 11, 45, 1, 90, "c"),
 
     # ("JUSTYNA", 18, 00, 5, 200, "tv"),
     # ("JUSTYNA", 8, 00, 6, 800, "tv"),
