@@ -1,8 +1,8 @@
 from PIL import Image, ImageDraw
 import textwrap
 
-from paramters import *
 from data import DATA
+from constants import *
 
 
 def textsize(text, font):
@@ -11,11 +11,13 @@ def textsize(text, font):
     _, _, width, height = draw.textbbox((0, 0), text=text, font=font)
     return width, height
 
+
 def draw_rectangle(position: tuple, type: str, lines: int):
     color = TYPES[type]
     x1, y1, x2, y2 = (position[0] + 4, position[1] + 4, position[0] + COLUMN_WIDTH - 4, position[1] + ROW_HEIGHT * lines - 4)
     draw.rounded_rectangle((x1, y1, x2, y2), fill=COLORS[color], width=2, outline=COLORS["black"], radius=20)
     return x2 - x1, y2 - y1
+
 
 def draw_name(position: tuple, text: str, rec_size: tuple):
     available_width = COLUMN_WIDTH + 150
@@ -66,7 +68,8 @@ def draw_background():
     for i, day in enumerate(next_days):
         w, h = textsize(day, font=days_font)
         position = (i * 250 + 250 - w / 2, 60 - h / 2)
-        # draw.text(position, day, font=days_font, fill=TEXT_COLOR)
+        if WRITE_DATES:
+            draw.text(position, day, font=days_font, fill=TEXT_COLOR)
 
     # horizontal lines
     for i in range(0, HOUR_END - HOUR_START + 1):
@@ -86,7 +89,9 @@ def draw_background():
 
 def draw_data():
     for record in DATA:
-        x = COLUMN_OFFSET + (record[3] - 1) * COLUMN_WIDTH
+        day_index = (record[3] - STARTING_DAY) % 7
+
+        x = COLUMN_OFFSET + day_index * COLUMN_WIDTH
         y = ROW_OFFSET + (record[1] - HOUR_START) * ROW_HEIGHT * 4 + record[2] // 15 * ROW_HEIGHT
         lines = record[4] // 15
 

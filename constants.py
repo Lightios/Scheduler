@@ -1,8 +1,7 @@
+from paramters import *
+
 from PIL import ImageFont
 from datetime import datetime, timedelta
-
-THEME = "dark"
-# THEME = "light"
 
 COLORS = {
     "blue": (66, 176, 245),
@@ -38,6 +37,7 @@ ROW_OFFSET = 90
 DAYS_EN = ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
 DAYS_PL = ("Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota", "Niedziela")
 
+DAYS = DAYS_EN if DAYS == "ENG" else DAYS_PL
 
 names_font = ImageFont.truetype("Arial.otf", 25)
 hours_font = ImageFont.truetype("Arial.otf", 23)
@@ -50,3 +50,10 @@ day_of_week = today.weekday()
 next_days = [(today + timedelta(days=i)).strftime('%d.%m') for i in range(7)]
 for i in range(7 - day_of_week):
     next_days = next_days[1:] + next_days[:1]
+
+
+if START_WITH_TODAY:
+    DAYS = DAYS[day_of_week:] + DAYS[:day_of_week]
+    next_days = next_days[day_of_week:] + next_days[:day_of_week]
+
+STARTING_DAY = day_of_week + 1 if START_WITH_TODAY else 1

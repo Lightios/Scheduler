@@ -1,6 +1,10 @@
-from constants import *
-
-DAYS = DAYS_PL
+DAYS = "PL"
+# DAYS = "ENG"
 
 HOUR_START = 10
 HOUR_END = 20
+WRITE_DATES = True
+START_WITH_TODAY = True
+
+THEME = "dark"
+# THEME = "light"
