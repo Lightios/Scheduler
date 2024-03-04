@@ -46,14 +46,18 @@ labels_font = ImageFont.truetype("Arial.otf", 35)
 
 
 today = datetime.today()
+
+if START_WITH == StartTime.TOMORROW:
+    today += timedelta(days=1)
+
 day_of_week = today.weekday()
 next_days = [(today + timedelta(days=i)).strftime('%d.%m') for i in range(7)]
 for i in range(7 - day_of_week):
     next_days = next_days[1:] + next_days[:1]
 
 
-if START_WITH_TODAY:
+if START_WITH in (StartTime.TODAY, StartTime.TOMORROW):
     DAYS = DAYS[day_of_week:] + DAYS[:day_of_week]
     next_days = next_days[day_of_week:] + next_days[:day_of_week]
 
-STARTING_DAY = day_of_week + 1 if START_WITH_TODAY else 1
+STARTING_DAY = day_of_week + 1 if START_WITH in (StartTime.TODAY, StartTime.TOMORROW) else 1
