@@ -13,8 +13,12 @@ DAYS = "PL"
 HOUR_START = 10
 HOUR_END = 20
 
+# WRITE_DATES = False
 WRITE_DATES = True
+
+# START_WITH = StartTime.TODAY
 START_WITH = StartTime.TOMORROW
+# START_WITH = StartTime.MONDAY
 
 THEME = "dark"
 # THEME = "light"

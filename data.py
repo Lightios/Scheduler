@@ -1,41 +1,48 @@
 DATA = (
     ("Psychologia (0089)", 10, 15, 3, 90, "l"),
-    # ("Cognitive systems (1146)", 14, 15, 3, 90, "l"),
-    ("Programowanie dla WWW (0089)", 12, 00, 4, 90, "l"),
-    ("Podstawy AI (1177)", 12, 15, 5, 90, "l"),
+    ("Cognitive systems (1146)", 14, 15, 3, 90, "l"),
+    # ("Programowanie dla WWW (0089)", 12, 00, 4, 90, "l"),
+    # ("Podstawy AI (1177)", 12, 15, 5, 90, "l"),
 
-    ("Podstawy AI (0020)", 14, 00, 5, 90, "c"),
-    ("Wstęp do kognitywistyki (0056)", 10, 15, 2, 90, "c"),
-    ("Cognitive systems (1146)", 16, 00, 3, 60, "c"),
-    ("Psychologia (1086)", 18, 15, 4, 90, "c"),
-    ("Programowanie dla WWW (0089)", 11, 45, 1, 90, "c"),
-
+    # ("Podstawy AI (0020)", 14, 00, 5, 90, "c"),
+    # ("Wstęp do kognitywistyki (0056)", 10, 15, 2, 90, "c"),
+    ("Cognitive systems (1146)", 16, 00, 3, 90, "c"),
+    # ("Psychologia (1086)", 18, 15, 4, 90, "c"),
+    # ("Programowanie dla WWW (0059)", 11, 45, 1, 90, "c"),
+    # ("Projekt zespołowy (0056)", 9, 00, 5, 45, "c"),
     # ("JUSTYNA", 18, 00, 5, 200, "tv"),
     # ("JUSTYNA", 8, 00, 6, 800, "tv"),
     # ("JUSTYNA", 8, 00, 7, 800, "tv")
-    ("Uliana", 17, 30, 3, 60, "tv"),
 
-    # ("Lena", 19, 00, 3, 60, "tv"),
-    # ("Alisa", 18, 00, 2, 60, "to"),
+    # ("Paweł", 18, 00, 2, 30, "to"),
+    # ("Paweł", 16, 30, 5, 30, "to"),
+    ("Paweł", 12, 00, 5, 30, "to"),
+    # ("Paweł", 17, 00, 6, 60, "tv"),
+    # ("Paweł", 12, 00, 7, 60, "tv"),
+    # ("Karol", 17, 00, 2, 60, "tv"),
+    # ("Kajetan", 19, 00, 3, 60, "tv"),
+    # ("Nina", 18, 00, 3, 60, "tv"),
+    # ("Nina", 15, 00, 1, 60, "to"),
+    # ("Kaja", 13, 00, 7, 60, "tv"),
+    # ("Dawid", 16, 00, 1, 120, "tv"),
+    # ("Mania", 16, 45, 4, 60, "to"),
+    # ("Mateusz", 12, 00, 6, 120, "ts"),
+    # ("Damian", 18, 00, 3, 60, "tv"),
+    # ("Maks", 18, 00, 1, 60, "to"),
+
+
+    # ("Uliana", 16, 00, 6, 60, "tv"),
     # ("Hania", 17, 00, 2, 60, "to"),
-    # ("Sofia", 18, 00, 2, 60, "to"),
-    # ("Nikola", 14, 00, 3, 60, "to"),
-    # ("Kaja", 16, 30, 7, 60, "tv"),
-    # ("Dawid", 19, 00, 2, 60, "tv"),
-    ("Filip", 18, 30, 3, 30, "tv"),
+    # ("Nika", 18, 00, 1, 60, "tv"),
+    # ("Lena", 19, 00, 3, 60, "tv"),
     # ("Maja", 17, 00, 2, 60, "tv"),
-    # ("Nika", 18, 00, 2, 60, "tv"),
-    # ("Dawid", 19, 00, 2, 60, "tv"),
-    ("Mania", 17, 00, 5, 60, "to"),
+    # ("Sofia", 18, 00, 2, 60, "to"),
+
+    # ("Hubert", 11, 00, 7, 60, "tv"),
     # ("Szczepan", 12, 00, 5, 30, "tv"),
-    ("Mateusz", 12, 00, 6, 120, "ts"),
+    # ("Filip", 15, 00, 4, 60, "tv"),
 
-    # ("Marysia", 17, 00, 4, 60, "tv"),
-    # ("Michał", 18, 00, 5, 90, "tv"),
-    # ("Nika", 19, 30, "Monday", 60, "tv"),
-    # ("Mateusz", 16, 00, 4, 90, "tv"),
-
-    # # Dawid
+    # Dawid
     # ("Język i kultura koreańska – konwersacje z elementami wiedzy o kulturze", 13, 30, 1, 90, "t"),
     # ("Historia Korei", 15, 15, 1, 90, "t"),
     # ("Koreańskie systemy pisma ", 13, 30, 2, 90, "t"),
@@ -48,10 +55,10 @@ DATA = (
     # ("Język i kultura koreańska – konwersacje z elementami wiedzy o kulturze", 15, 15, 5, 90, "t"),
     # ("Zagadnienia społecznopolityczne Korei", 17, 00, 5, 90, "t"),
     # ("Sztuka i estetyka Korei", 13, 30, 5, 90, "t"),
-    # ("Auchan", 6, 00, 1, 420, "r"),
-    # ("Auchan", 6, 00, 2, 420, "r"),
-    # ("Auchan", 6, 00, 4, 360, "r"),
-    # ("Auchan", 6, 00, 5, 420, "r"),
-    # ("Auchan", 14, 00, 6, 480, "r")
-
+    # ("Auchan", 18, 00, 1, 240, "r"),
+    # ("Auchan", 18, 00, 2, 240, "r"),
+    # ("Auchan", 18, 00, 3, 240, "r"),
+    # ("Auchan", 6, 00, 5, 360, "r"),
+    # ("Auchan", 14, 00, 6, 480, "r"),
+    # ("Auchan", 13, 00, 7, 480, "r")
 )
