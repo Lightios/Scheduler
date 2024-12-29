@@ -2,7 +2,6 @@ from enum import Enum
 
 
 class StartTime(Enum):
-    MONDAY = 0
     TODAY = 1
     TOMORROW = 2
 
@@ -10,15 +9,15 @@ class StartTime(Enum):
 DAYS = "PL"
 # DAYS = "ENG"
 
-HOUR_START = 10
-HOUR_END = 20
+HOUR_START = 11
+HOUR_END = 19
 
 # WRITE_DATES = False
 WRITE_DATES = True
 
 # START_WITH = StartTime.TODAY
-START_WITH = StartTime.TOMORROW
-# START_WITH = StartTime.MONDAY
+# START_WITH = StartTime.TOMORROW
+START_WITH = "02.01.2025"
 
 THEME = "dark"
 # THEME = "light"

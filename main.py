@@ -74,12 +74,12 @@ def draw_background():
     # horizontal lines
     for i in range(0, HOUR_END - HOUR_START + 1):
         height = i * ROW_HEIGHT * 4 + ROW_OFFSET
-        draw.line((0, height, img.size[0], height), fill=TEXT_COLOR, width=2)
+        draw.line((0, height, img.size[0], height), fill=LINES_COLOR, width=2)
 
     # vertical lines
     for i in range(7):
         width = i * COLUMN_WIDTH + COLUMN_OFFSET
-        draw.line((width, 0, width, img.size[1]), fill=TEXT_COLOR, width=2)
+        draw.line((width, 0, width, img.size[1]), fill=LINES_COLOR, width=2)
 
     # hours
     for i in range(HOUR_START, HOUR_END + 1):
