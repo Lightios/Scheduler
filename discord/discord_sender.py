@@ -1,4 +1,4 @@
-from bot import run
+from bot_schedule import run
 
 
 def send():

@@ -2,7 +2,6 @@ import discord
 from discord.ext import commands
 
 from scheduler_send import clear_messages, send_image, send_annotation
-from notification_send import send_notifications
 
 intents = discord.Intents.default()
 intents.messages = True
@@ -21,10 +20,10 @@ async def on_ready():
         channel = discord.utils.get(guild.channels, name="bot-test")
         if channel:
             print(f'Found channel: {channel.name} (ID: {channel.id})')
-            # await clear_messages(channel)
+            await clear_messages(channel)
             # await send_annotation(channel)
-            # await send_image(channel)
-            await send_notifications(channel)
+            await send_image(channel)
+            # await send_notifications(channel)
         else:
             print('Channel "grafik" not found')
     else:
