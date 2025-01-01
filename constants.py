@@ -28,9 +28,9 @@ TYPES = {
     # "r": "orange",  # tutoring variable (time)
     # "black": "black",
     "p": "pink",  # primary school
+    "m": "blue",  # matura
     "hb": "green",  # high school - base
     "he": "orange",  # high school - extended
-    "m": "blue",  # matura
 
     # "p": "green",  # primary school
     # "m": "orange",  # matura
